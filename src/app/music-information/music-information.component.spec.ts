@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MusicInformationComponent } from './music-information.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MusicInformationComponent', () => {
   let component: MusicInformationComponent;
@@ -9,6 +10,7 @@ describe('MusicInformationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MusicInformationComponent],
+      imports: [RouterTestingModule],
     }).compileComponents();
   });
 

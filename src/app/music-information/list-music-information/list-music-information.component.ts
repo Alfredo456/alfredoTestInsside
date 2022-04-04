@@ -27,6 +27,13 @@ export class ListMusicInformationComponent implements OnInit, AfterViewInit {
     this.dataSource.data = [];
   }
 
+  initAtributes() {
+    this.displayedColumns = ['name', 'artists'];
+    this.resultsLength = 0;
+    this.dataSource = new MatTableDataSource<any>();
+    this.dataSource.data = [];
+  }
+
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
@@ -44,6 +51,7 @@ export class ListMusicInformationComponent implements OnInit, AfterViewInit {
       (error) => {
         if (error.status === 400) {
           this._notificationsService.showNotification('danger', 'No hay resultados actualmente');
+          this.initAtributes();
         } else {
           this._notificationsService.showNotification('danger', 'Ha ocurrido un error');
         }
