@@ -1,1 +1,39 @@
-<p>list-music-information works!</p>
+<div class="row justify-content-sm-center h-100">
+  <div class="col-4">
+    <mat-form-field>
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="textFilter($event)" [(ngModel)]="filter" type="text" maxlength="100" />
+    </mat-form-field>
+  </div>
+  <div class="col-12" *ngIf="dataSource && dataSource.data && dataSource.data.length > 0">
+    <table mat-table [dataSource]="dataSource" class="table-striped table-hover m-auto">
+      <caption>
+        Lista de temas musicales.
+      </caption>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="text-primary">Nombre</th>
+        <td class="text-table" mat-cell *matCellDef="let row">{{ row?.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="artists">
+        <th mat-header-cell *matHeaderCellDef class="text-primary">Artista/s</th>
+        <td class="text-table" mat-cell *matCellDef="let row">
+          <div *ngFor="let artist of row?.artists">
+            {{ artist?.name + ' ' }}
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></tr>
+    </table>
+    <mat-paginator
+      class="text-primary"
+      [length]="resultsLength"
+      [pageSize]="10"
+      (page)="handlePageEvent($event)"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</div>
