@@ -65,7 +65,7 @@ export class ListMusicInformationComponent implements OnInit, AfterViewInit {
     };
     this.initList(payload);
   }
-  textFilter(event: any) {
+  textFilter() {
     let payload = {
       filter: this.filter,
       index: 0,

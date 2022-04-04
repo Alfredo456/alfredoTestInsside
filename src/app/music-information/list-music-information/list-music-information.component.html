@@ -2,7 +2,7 @@
   <div class="col-4">
     <mat-form-field>
       <mat-label>Buscar</mat-label>
-      <input matInput (keyup)="textFilter($event)" [(ngModel)]="filter" type="text" maxlength="100" />
+      <input matInput (keyup)="textFilter()" [(ngModel)]="filter" type="text" maxlength="100" />
     </mat-form-field>
   </div>
   <div class="col-12" *ngIf="dataSource && dataSource.data && dataSource.data.length > 0">
