@@ -1,27 +1,22 @@
 # InssideMusic
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Node v16.14.0
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test --no-watch --code-coverage` to execute the unit tests via [Karma]
 
-## Running end-to-end tests
+## observations:
+1. the paging of the api is not correct. In the search method
+2. guards have been implemented
+3. A session login data was mocked, to enter the system you only have the following credentials
+   `{"email": "alfredo.casique456@gmail.com",
+   "password": "123"}
+4. The function was not developed: Show top of any country.
+5. The only information listed will be when search information is provided. only the data is shown in the table, in this case, the name of the song and the artists who perform it
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
