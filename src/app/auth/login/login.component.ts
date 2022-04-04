@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import users from '../../global/dataDummy/users.json';
 import { NotificationsService } from '../../global/services/notifications.service';
-import {AuthService} from "../auth.service";
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-login',
@@ -13,8 +14,12 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   userList = users;
 
-  constructor(private formBuilder: FormBuilder, private _notificationsService: NotificationsService, private _authService: AuthService) {
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private _notificationsService: NotificationsService,
+    private _authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.generateForm();
@@ -25,7 +30,6 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, Validators.compose([Validators.required, Validators.email])),
       password: new FormControl(null, Validators.compose([Validators.required])),
     });
-    console.log(this.userList);
   }
 
   login() {
@@ -35,9 +39,9 @@ export class LoginComponent implements OnInit {
           (user: any) => user.email === this.loginForm.value.email && user.password === this.loginForm.value.password
         )
       ) {
-        console.log('entro');
-        this._authService.getToken().subscribe(response => {
-          console.log(response);
+        this._authService.getToken().subscribe((response) => {
+          this._authService.setToken(response.access_token);
+          this.router.navigate(['/music-information']).then(() => false);
         });
       } else {
         this._notificationsService.showNotification('danger', 'Los datos suministrados son erroneos');

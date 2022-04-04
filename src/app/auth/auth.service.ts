@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+export let token = '';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -19,6 +21,16 @@ export class AuthService {
         Authorization: 'Basic ' + btoa(this.client_id + ':' + this.client_secret),
       }),
     };
+  }
+
+  isLogin(): boolean {
+    if (token && token !== '') {
+      return true;
+    }
+    return false;
+  }
+  setToken(newToken: string) {
+    token = newToken;
   }
 
   getToken(): Observable<any> {
