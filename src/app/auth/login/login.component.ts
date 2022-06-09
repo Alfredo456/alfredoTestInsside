@@ -39,10 +39,7 @@ export class LoginComponent implements OnInit {
           (user: any) => user.email === this.loginForm.value.email && user.password === this.loginForm.value.password
         )
       ) {
-        this._authService.getToken().subscribe((response) => {
-          this._authService.setToken(response.access_token);
-          this.router.navigate(['/music-information']).then(() => false);
-        });
+        this.router.navigate(['/information']).then(() => false);
       } else {
         this._notificationsService.showNotification('danger', 'Los datos suministrados son erroneos');
       }

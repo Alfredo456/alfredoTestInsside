@@ -1,0 +1,28 @@
+@import 'vars';
+@import 'functions';
+@import 'mixins';
+
+.somno__input {
+  padding: 0.4rem;
+  line-height: 1.44rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: 1px solid get($colors, kashmir-blue);
+  border-radius: 0.4rem;
+  @include background-color(white);
+  @include color(black);
+
+  &[type='password'] {
+    -webkit-text-security: square;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: getCss(color, primary);
+  }
+
+  &.somno__input--error {
+    border-color: get($colors, pomegranate);
+    @include background-color(cinderella);
+  }
+}

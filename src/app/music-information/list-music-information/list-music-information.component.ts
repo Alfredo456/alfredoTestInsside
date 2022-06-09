@@ -11,11 +11,11 @@ import { NotificationsService } from '../../global/services/notifications.servic
   styleUrls: ['./list-music-information.component.scss'],
 })
 export class ListMusicInformationComponent implements OnInit, AfterViewInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  @ViewChild(MatPaginator) paginator!: MatPaginator ;
   displayedColumns: string[];
   resultsLength: number;
   dataSource: MatTableDataSource<any>;
-  filter: string | undefined;
+  filter!: string ;
 
   constructor(
     private _musicInformationService: MusicInformationService,

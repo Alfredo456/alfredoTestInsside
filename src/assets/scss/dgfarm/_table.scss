@@ -1,0 +1,37 @@
+tr.mat-row,
+tr.mat-footer-row {
+  height: 30px !important;
+  font-size: 11px !important;
+}
+
+.mat-cell,
+.mat-footer-cell {
+  font-size: 11px;
+  color: #555 !important;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  border-bottom-width: 0px !important;
+}
+
+.table-striped tbody tr:nth-of-type(2n + 1) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.footer-highlight {
+  color: white !important;
+  font-weight: bold;
+  background: #80a5cb !important;
+}
+
+.bold-highlight {
+  color: white !important;
+  font-weight: bold;
+  background: #80cbc4 !important;
+}
+
+tr.mat-row:hover {
+  cursor: pointer !important;
+}

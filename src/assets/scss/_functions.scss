@@ -1,0 +1,12 @@
+@function get($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @error "Unknown `#{$key}` in ``#{$map}`.";
+  @return null;
+}
+
+@function getCss($property, $key) {
+  @return var(--#{$property}-#{$key});
+}

@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <div
+    class="sidebar sidebar-background"
+    data-color="white"
+    style="overflow-x: auto; background: #fafbfc"
+    data-background-color="white"
+  >
+    <app-sidebar-cmp></app-sidebar-cmp>
+    <div class="sidebar-background"></div>
+  </div>
+  <div class="main-panel">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <app-fixedplugin></app-fixedplugin> -->
+</div>

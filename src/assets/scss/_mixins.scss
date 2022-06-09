@@ -1,0 +1,38 @@
+@import 'functions';
+@import 'vars';
+
+@mixin background-color($color) {
+  @if map-has-key($map: $background-color-theme, $key: $color) {
+    background-color: getCss(background, $color);
+  }
+
+  @if map-has-key($map: $colors, $key: $color) {
+    background-color: get($colors, $color);
+  }
+}
+
+@mixin background-color-transparentize($color, $opacity: 1) {
+  @if map-has-key($map: $background-color-theme, $key: $color) {
+    background-color: transparentize(getCss(background, $color), $opacity);
+  }
+
+  @if map-has-key($map: $colors, $key: $color) {
+    background-color: transparentize(get($colors, $color), $opacity);
+  }
+}
+
+@mixin color($color) {
+  @if map-has-key($map: $colors-theme, $key: $color) {
+    color: getCss(color, $color);
+  }
+
+  @if map-has-key($map: $colors, $key: $color) {
+    color: get($colors, $color);
+  }
+}
+
+@mixin min-width($breakpoint) {
+  @media (min-width: get($breakpoints-media-queries, $breakpoint)) {
+    @content;
+  }
+}

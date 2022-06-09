@@ -1,0 +1,30 @@
+@import 'mixins';
+.container {
+  // TODO: Colocar todos los max-width de los breakpoints (Investigar y colocarlos de manera logica.)
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  @include min-width(sm) {
+    max-width: 54rem;
+  }
+
+  @include min-width(md) {
+    max-width: 72rem;
+  }
+
+  @include min-width(lg) {
+    max-width: 96rem;
+  }
+
+  @include min-width(xlg) {
+    max-width: 114rem;
+  }
+
+  @include min-width(xxlg) {
+    max-width: 154rem;
+  }
+
+  @include min-width(xxxlg) {
+    max-width: 174rem;
+  }
+}

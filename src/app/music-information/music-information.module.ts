@@ -9,6 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import {SidebarModule} from "../sidebar/sidebar.module";
 
 @NgModule({
   declarations: [MusicInformationComponent, ListMusicInformationComponent],
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatInputModule,
     FormsModule,
+    SidebarModule
   ],
 })
 export class MusicInformationModule {}

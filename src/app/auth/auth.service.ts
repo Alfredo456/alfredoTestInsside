@@ -24,10 +24,7 @@ export class AuthService {
   }
 
   isLogin(): boolean {
-    if (token && token !== '') {
-      return true;
-    }
-    return false;
+    return true;
   }
   setToken(newToken: string) {
     token = newToken;

@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'music-information',
+    path: 'information',
     canActivate: [AuthGuard],
     loadChildren: () => import('./music-information/music-information.module').then((m) => m.MusicInformationModule),
   },

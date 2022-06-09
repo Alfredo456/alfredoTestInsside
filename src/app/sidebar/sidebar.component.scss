@@ -1,0 +1,22 @@
+.disabled_menu:active {
+  pointer-events: none;
+}
+
+.float {
+  position: absolute;
+}
+
+.logo-img {
+  width: 220px;
+}
+.logo img {
+  width: 50px;
+  transition: 0.1s;
+}
+.promo {
+  background-color: #009688;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
